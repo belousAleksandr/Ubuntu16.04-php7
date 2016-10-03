@@ -19,7 +19,8 @@ RUN apt-get install -y \
 	php7.0-dev \
 	php-xdebug \
 	php-mbstring \ 
-	php7.0-mbstring
+	php7.0-mbstring \
+	php-memcached
 
 RUN apt-get clean \
  	&& rm -rf /var/lib/apt/lists/*
