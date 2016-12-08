@@ -92,6 +92,7 @@ RUN a2ensite app_vhost app_vhost_ssl
 
 EXPOSE 80 443
 
+RUN apt-get install pkg-config
 RUN pecl install mongodb
 
 RUN echo "extension=mongodb.so" > /etc/php/7.0/cli/conf.d/20-mongodb.ini && \
