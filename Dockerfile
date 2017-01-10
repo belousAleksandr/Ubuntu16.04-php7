@@ -98,9 +98,9 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
 
 RUN 	pecl install mongodb
 
-RUN echo "extension=mongodb.so" > /etc/php/7.0/fpm/conf.d/20-mongodb.ini && \
-	echo "extension=mongodb.so" > /etc/php/7.0/cli/conf.d/20-mongodb.ini && \
+RUN echo "extension=mongodb.so" > /etc/php/7.0/cli/conf.d/20-mongodb.ini && \
 	echo "extension=mongodb.so" > /etc/php/7.0/mods-available/mongodb.ini
+RUN ln -s /etc/php/7.0/mods-available/mongodb.ini /etc/php/7.0/apache2/conf.d/20-mongodb.ini
 
 EXPOSE 80 443
 
