@@ -79,6 +79,9 @@ RUN sed -ri 's/^memory_limit\s*=\s*128M/memory_limit = 512M/g' /etc/php/7.0/cli/
 RUN sed -ri 's/^post_max_size\s*=\s*8M/post_max_size = 2048M/g' /etc/php/7.0/cli/php.ini
 RUN sed -ri 's/^upload_max_filesize\s*=\s*2M/upload_max_filesize = 2048M/g' /etc/php/7.0/cli/php.ini
 
+## Disable xdebug for apache
+RUN rm -rf /etc/php/7.0/apache2/conf.d/20-xdebug.ini
+
 ## config apache
 
 RUN a2enmod rewrite ssl headers
